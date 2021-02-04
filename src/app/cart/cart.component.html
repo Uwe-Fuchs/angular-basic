@@ -1,0 +1,30 @@
+<h3>Cart</h3>
+
+<p>
+  <a routerLink="/shipping">Shipping Prices</a>
+</p>
+
+<div class="cart-item" *ngFor="let item of cartItems">
+  <span>{{ item.name }}</span>
+  <span>{{ item.price | currency }}</span>
+</div>
+
+<div *ngIf="cartItems.length > 0">
+
+  <div>
+    <label for="customerName">
+      Name
+    </label>
+    <input [(ngModel)]="customerName"  placeholder="name">
+  </div>
+  
+  <div>
+    <label for="customerAddress">
+      Address
+    </label>
+    <input [(ngModel)]="customerAddress" placeholder="address">
+  </div>
+
+  <button class="button" (click)="submit()">Purchase</button><br><br>
+  <button class="button" (click)="clearCart()">Clear Cart</button>
+</div>
