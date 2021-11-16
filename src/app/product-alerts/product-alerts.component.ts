@@ -11,4 +11,8 @@ import { Product } from '../product';
 export class ProductAlertsComponent {
   @Input() product: Product;
   @Output() notify = new EventEmitter();
+
+  click() {
+    this.notify.emit();
+  }
 }
